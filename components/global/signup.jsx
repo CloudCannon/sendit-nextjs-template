@@ -1,4 +1,4 @@
-export default function GlobalLogin({ block, dataBinding }) {
+export default function GlobalSignup({ block, dataBinding }) {
     return (
         <section className="sing-up pt-md-20 pt-18 pb-md-20 pb-10">
             <div className="container">
