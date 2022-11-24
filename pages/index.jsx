@@ -7,7 +7,8 @@ const filer = new Filer({ path: 'content' });
 function HomePage({ page }) {
     return (
       <DefaultLayout page={page}>
-        <Blocks content_blocks={page.data.content_blocks} ></Blocks>
+        <div dangerouslySetInnerHTML={{ __html: JSON.stringify(page, null, '\t') }}/>
+        <Blocks content_blocks={page.content_blocks || page.data.content_blocks } ></Blocks>
       </DefaultLayout>
     )
   }
