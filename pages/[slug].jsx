@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 	const ignored = {
 		home: true,
 		blog: true,
+		"404": true,
 		feed: true
 	};
 
