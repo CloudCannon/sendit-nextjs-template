@@ -27,7 +27,7 @@
 		}
 	],
 	"btn": {
-		"link": "/contact/",
+		"link": "/signup/",
 		"text": "Get Started"
 	}
 }

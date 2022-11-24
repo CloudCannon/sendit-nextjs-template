@@ -1,53 +1,52 @@
 import Link from "next/link";
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
 
-
-
-  
-export default function AboutHero( {block, dataBinding}) {
+export default function AboutHero({ block, dataBinding }) {
 
     const renderPlacer = (param) => {
-        switch(param) {
-          case 'back_top_right':
-            return 'image-one';
-          case 'front_bottom':
-            return 'image-two';
-          case 'back_top_left':
-            return 'image-three';
-          default:
-            return '';
+        switch (param) {
+            case 'front_bottom':
+                return 'image-one';
+            case 'back_top_right':
+                return 'image-two';
+            case 'back_top_left':
+                return 'image-three';
+            default:
+                return '';
         }
-      };
+    };
 
-	return (
-        <section class="about-hero-two">
-        <div class="container">
-            <div class="row">
-            <div class="col-xl-5 col-lg-10 mx-auto">
-                <div class="about-hero-two-content position-relative">
-                <h2>{block.title}</h2>
-                <p class="mb-20 w-xxl-80">{block.description}</p>
-                <div class="">
-                    { block.link && 
-                        <Link href={block.link.url} class="btn btn-primary btn-lg"> {block.link.text} </Link>
-                    }
-                </div>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-12">
-                <div class="about-hero-two-banner">
-
-                {block.hero_images.map((image, i) => (
-                    <div class={`rounded-box ${renderPlacer(image.placer)}`} key={i}>
-                        <img src={image.image_path} alt="aboutfeature" loading="lazy"/>
+    return (
+        <section className="about-hero-two">
+            <div className="container">
+                <div className="row">
+                    <div className="col-xl-5 col-lg-10 mx-auto">
+                        <div className="about-hero-two-content position-relative">
+                            <h2>{block.title}</h2>
+                            <div dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
+                            <div className="scroll-down d-flex justify-content-center justify-content-xl-start">
+                                {block.button &&
+                                    <Link href={block.button.link} className="btn btn-primary btn-lg"> {block.button.text} </Link>
+                                }
+                            </div>
+                        </div>
                     </div>
-                ))}
-                <div class="pattern">
-                    <img src="/images/about/patterns-two.png" alt="patterns" loading="lazy"/>
-                </div>
+                    <div className="col-xl-7 col-lg-12">
+                        <div className="about-hero-two-banner">
+
+                            {block.hero_images.map((image, i) => (
+                                <div className={`rounded-box ${renderPlacer(image.placement)}`} key={i}>
+                                    <img src={image.image} alt={image.image_alt} loading="lazy" />
+                                </div>
+                            ))}
+                            <div className="pattern">
+                                <img src="/images/about/patterns-two.png" alt="patterns" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
         </section>
-	);
+    );
 }

@@ -893,7 +893,7 @@ $.magnificPopup = {
 
 		overflowY: 'auto',
 
-		closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>',
+		closeMarkup: '<button title="%title%" type="button" className="mfp-close">&#215;</button>',
 
 		tClose: 'Close (Esc)',
 
@@ -1129,14 +1129,14 @@ var _imgInterval,
 $.magnificPopup.registerModule('image', {
 
 	options: {
-		markup: '<div class="mfp-figure">'+
-					'<div class="mfp-close"></div>'+
+		markup: '<div className="mfp-figure">'+
+					'<div className="mfp-close"></div>'+
 					'<figure>'+
-						'<div class="mfp-img"></div>'+
+						'<div className="mfp-img"></div>'+
 						'<figcaption>'+
-							'<div class="mfp-bottom-bar">'+
-								'<div class="mfp-title"></div>'+
-								'<div class="mfp-counter"></div>'+
+							'<div className="mfp-bottom-bar">'+
+								'<div className="mfp-title"></div>'+
+								'<div className="mfp-counter"></div>'+
 							'</div>'+
 						'</figcaption>'+
 					'</figure>'+
@@ -1569,9 +1569,9 @@ var IFRAME_NS = 'iframe',
 $.magnificPopup.registerModule(IFRAME_NS, {
 
 	options: {
-		markup: '<div class="mfp-iframe-scaler">'+
-					'<div class="mfp-close"></div>'+
-					'<iframe class="mfp-iframe" src="//about:blank" frameborder="0" allowfullscreen></iframe>'+
+		markup: '<div className="mfp-iframe-scaler">'+
+					'<div className="mfp-close"></div>'+
+					'<iframe className="mfp-iframe" src="//about:blank" frameborder="0" allowfullscreen></iframe>'+
 				'</div>',
 
 		srcAction: 'iframe_src',
@@ -1672,7 +1672,7 @@ $.magnificPopup.registerModule('gallery', {
 
 	options: {
 		enabled: false,
-		arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+		arrowMarkup: '<button title="%title%" type="button" className="mfp-arrow mfp-arrow-%dir%"></button>',
 		preload: [0,2],
 		navigateByImgClick: true,
 		arrows: true,
@@ -1802,7 +1802,7 @@ $.magnificPopup.registerModule('gallery', {
 			_mfpTrigger('LazyLoad', item);
 
 			if(item.type === 'image') {
-				item.img = $('<img class="mfp-img" />').on('load.mfploader', function() {
+				item.img = $('<img className="mfp-img" />').on('load.mfploader', function() {
 					item.hasSize = true;
 				}).on('error.mfploader', function() {
 					item.hasSize = true;

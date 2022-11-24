@@ -1,108 +1,117 @@
 ---
 title: Pricing
+permalink: /pricing/
+layout: base.liquid
+seo:
+  page_description: 
+  canonical_url: 
+  featured_image: 
+  author_twitter_handle: 
+  open_graph_type:
+  no_index: false
 content_blocks:
   - _bookshop_name: pricing/hero
     title: A plan for everyone
-    description: >-
-      Sendit is easy to get started and we have a pricing plan for businesses of
-      all sizes.
+    description: Sendit is easy to get started and we have a pricing plan for businesses of all sizes.
+
   - _bookshop_name: pricing/table
     pricing_tier:
       - tier: Free
         description: Everything you need to get started.
         price: 0
-        hasDiscount: false
-        discountPrice: 0
-        isActive: false
+        has_discount: false
+        discount_price: 0
+        is_active: false
         feature:
           - item: 1 Email Campaign
-            isActive: true
+            is_active: true
           - item: 1 Year Premium Support
-            isActive: true
+            is_active: true
           - item: Regular Update for 1 Year
-            isActive: true
+            is_active: true
           - item: 90+ Widgets & Extensions
-            isActive: true
+            is_active: true
           - item: 23+ Templates
-            isActive: true
+            is_active: true
           - item: Over 800 Section Blocks
-            isActive: false
+            is_active: false
           - item: Support
-            isActive: false
+            is_active: false
           - item: 3 filters
-            isActive: false
+            is_active: false
           - item: Unlimited activity history
-            isActive: false
-        btn:
-          link: /sign-up
+            is_active: false
+        button:
+          link: /signup
           text: Try This Free
       - tier: Pro
-        description: More collaborative power.
+        description: More collaborative power and unlimited boards for fast-growing.
         price: 199
-        hasDiscount: true
-        discountPrice: 125
-        isActive: true
+        has_discount: true
+        discount_price: 125
+        is_active: true
         feature:
-          - item: 5 Email Campaigns
-            isActive: true
+          - item: 1 Email Campaign
+            is_active: true
           - item: 1 Year Premium Support
-            isActive: true
+            is_active: true
           - item: Regular Update for 1 Year
-            isActive: true
+            is_active: true
           - item: 90+ Widgets & Extensions
-            isActive: true
+            is_active: true
           - item: 23+ Templates
-            isActive: true
+            is_active: true
           - item: Over 800 Section Blocks
-            isActive: true
+            is_active: true
           - item: Support
-            isActive: false
+            is_active: false
           - item: 3 filters
-            isActive: false
+            is_active: false
           - item: Unlimited activity history
-            isActive: false
-        btn:
-          link: /sign-up
+            is_active: false
+        button:
+          link: /signup
           text: Try This Free
       - tier: Business
-        description: All the bells and whistles.
+        description: For starters Includes unlimited members
         price: 499
-        hasDiscount: true
-        discountPrice: 350
-        isActive: false
+        has_discount: true
+        discount_price: 350
+        is_active: false
         feature:
-          - item: 20 Email Campaigns
-            isActive: true
+          - item: 1 Email Campaign
+            is_active: true
           - item: 1 Year Premium Support
-            isActive: true
+            is_active: true
           - item: Regular Update for 1 Year
-            isActive: true
+            is_active: true
           - item: 90+ Widgets & Extensions
-            isActive: true
+            is_active: true
           - item: 23+ Templates
-            isActive: true
+            is_active: true
           - item: Over 800 Section Blocks
-            isActive: true
+            is_active: true
           - item: Support
-            isActive: true
+            is_active: true
           - item: 3 filters
-            isActive: true
+            is_active: true
           - item: Unlimited activity history
-            isActive: true
-        btn:
+            is_active: true
+        button:
+          link: /signup
+          text: Try This Free
+
   - _bookshop_name: global/faq
     title: Have
     title_suffix: Questions?
-    description: We're always here to help. Here are the most frequently asked questions.
-    faq:
+    description: The stats are in our favour. SaaSFlow doesn't just help you with your email marketing, we get you customer relationships that last.
+    FAQ:
       - title: Is there a maximum numbers of emails I can send each month?
         description: No, the prices include unlimited emails. Send to your heart's content.
       - title: Where can I find out more information?
         description: Right here on this website, or contact our support team.
       - title: Do you have pricing for non-profits?
-        description: >-
-          Yes, contact our support team and we'll get you set up on our
-          non-profit plan.
+        description: Yes, contact our support team and we'll get you set up on our non-profit plan.
       - title: What forms of payment do you accept?
         description: We accept credit cards, checks, and cash.
       - title: In which currencies can I make payments?

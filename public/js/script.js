@@ -54,26 +54,26 @@ els.forEach(el => {
    });
    // Scroll spy
    $(document).ready(function () {
-      // $('body').scrollspy({
-      //    target: '#scrol-nav',
-      //    offset: 20,
-      // });
+      $('body').scrollspy({
+         target: '#scrol-nav',
+         offset: 20,
+      });
 
-      // // Navbar fade
-      // changeNavbar();
+      // Navbar fade
+      changeNavbar();
 
-      // $(window).scroll(function () {
-      //    changeNavbar();
-      // });
+      $(window).scroll(function () {
+         changeNavbar();
+      });
 
-      // function changeNavbar() {
-      //    var navbar = $('#scrol-nav');
-      //    if ($(this).scrollTop() >= 20) {
-      //       navbar.addClass('bg-light').removeClass('bg-transparent');
-      //    } else if ($(this).scrollTop() < 20) {
-      //       navbar.removeClass('bg-light').addClass('bg-transparent');
-      //    }
-      // }
+      function changeNavbar() {
+         var navbar = $('#scrol-nav');
+         if ($(this).scrollTop() >= 20) {
+            navbar.addClass('bg-light').removeClass('bg-transparent');
+         } else if ($(this).scrollTop() < 20) {
+            navbar.removeClass('bg-light').addClass('bg-transparent');
+         }
+      }
    });
    //end  Scroll spy style
 });

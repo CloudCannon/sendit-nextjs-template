@@ -1,37 +1,39 @@
 import Link from "next/link";
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
 
 export default function AboutVideo({ block, dataBinding }) {
     return (
-        <section class="works">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="works-content">
+        <section className="works">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-6">
+                        <div className="works-content">
                             <h2>{block.title}</h2>
-                            <p>{block.description}</p>
-                            {block.btn &&
-                                <Link href={block.btn.link} class="btn btn-lg btn-white"> {block.btn.text} </Link>
+                            <div dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
+                            {block.button &&
+                                <Link href={block.button.link} className="btn btn-lg btn-white"> {block.button.text} </Link>
                             }
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div className="col-lg-6">
 
                         {block.video &&
-                        <div class="works-banner rounded-box">
+                        <div className="works-banner rounded-box">
                             <img
-                                src={block.video.image_path}
-                                class="w-100"
-                                alt="banner-image"
+                                src={block.video.image}
+                                className="w-100"
+                                alt={block.video.image_alt}
                                 loading="lazy"
                             />
-                            <div class="effect">
+                            <div className="effect">
                                 <img src="/images/works/effect.png" alt="effect" loading="lazy" />
                             </div>
                             <div
-                                class="video-iframe d-flex align-items-center justify-content-center"
+                                className="video-iframe d-flex align-items-center justify-content-center"
                             >
-                                <div class="video-icon me-sm-9 me-8">
-                                    <a class="popup-vimeo" href={block.video.link}>
+                                <div className="video-icon me-sm-9 me-8">
+                                    <a className="popup-vimeo" href={block.video.link}>
                                         <svg
                                             width="28"
                                             height="32"

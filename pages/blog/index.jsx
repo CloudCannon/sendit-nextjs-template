@@ -3,27 +3,29 @@ import DefaultLayout from '../../components/layouts/default';
 import Filer from '@cloudcannon/filer';
 import PostSummary from '../../components/posts/summary';
 import { generateRss } from '../../lib/rss';
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
 
 const filer = new Filer({ path: 'content' });
 
 function PrivacyPage({ page, posts }) {
   return (
     <DefaultLayout page={page}>
-      <section class="blog-hero pt-xl-22 pt-sm-20 pt-18 pb-xxl-25 pb-xl-23 pb-22 position-relative">
-        <div class="container">
-            <div class="row">
-              <div class="col-xl-8 col-lg-10 mx-auto">
-                  <div class="blog-hero-content">
-                    <h1 class="blog-hero-title">{page.data.title}</h1>
-                    <p>{page.data.description}</p>
+      <section className="blog-hero pt-xl-22 pt-sm-20 pt-18 pb-xxl-25 pb-xl-23 pb-22 position-relative">
+        <div className="container">
+            <div className="row">
+              <div className="col-xl-8 col-lg-10 mx-auto">
+                  <div className="blog-hero-content">
+                    <h1 className="blog-hero-title">{page.data.title}</h1>
+                    <div dangerouslySetInnerHTML={{ __html: md.render(page.data.description) }}/>
                   </div>
               </div>
             </div>
         </div>
       </section>
-      <section class="blog @@padding @@blog-two">
-        <div class="container">
-            <div class="row">
+      <section className="blog @@padding @@blog-two">
+        <div className="container">
+            <div className="row">
               { posts.map((post, i) => (
                 <PostSummary post={post}  key={i} />
               ))}
@@ -31,11 +33,11 @@ function PrivacyPage({ page, posts }) {
               
               {{ end }}  */}
               {/* {{ if gt .Paginator.TotalPages 1 }}
-              <nav class="blog-pagination">
-                  <ul class="pagination">
+              <nav className="blog-pagination">
+                  <ul className="pagination">
                     {{ if .Paginator.HasPrev }}
-                    <li class="page-item">
-                        <a class="page-link btn btn-secondary" href="{{.Paginator.Prev.URL}}">
+                    <li className="page-item">
+                        <a className="page-link btn btn-secondary" href="{{.Paginator.Prev.URL}}">
                           <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20.657"
@@ -58,17 +60,17 @@ function PrivacyPage({ page, posts }) {
                         </a>
                     </li>
                     {{ end }} {{ $paginator := .Paginator }} {{ range $paginator.Pagers }}
-                    <li class="page-item">
+                    <li className="page-item">
                         <a
-                          class="page-link btn btn-secondary {{ if eq . $paginator }}active{{ end }}"
+                          className="page-link btn btn-secondary {{ if eq . $paginator }}active{{ end }}"
                           href="{{.URL}}"
                           >{{.PageNumber}}</a
                         >
                     </li>
                     {{ end }} {{ if .Paginator.HasNext }}
 
-                    <li class="page-item">
-                        <a class="page-link btn btn-secondary" href="{{ .Paginator.Next.URL }}">
+                    <li className="page-item">
+                        <a className="page-link btn btn-secondary" href="{{ .Paginator.Next.URL }}">
                           <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20.657"

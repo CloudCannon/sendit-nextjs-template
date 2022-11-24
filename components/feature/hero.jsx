@@ -1,30 +1,28 @@
 import Link from "next/link";
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
 
 export default function FeatureHero( {block, dataBinding}) {
 	return (
-        <section class="feature-hero">
-        <div class="container">
-            <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="feature-hero-content">
-                <h1 class="">{block.title}</h1>
-                <p>{block.description}</p>
-                <div class="d-block mb-6">
-                    {block.btn &&
-                        <Link href={block.btn.link} class="btn btn-primary btn-lg"> {block.btn.text} </Link>
+        <section className="feature-hero">
+        <div className="container">
+            <div className="row align-items-center">
+            <div className="col-lg-6">
+                <div className="feature-hero-content">
+                <h1 className="">{block.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
+                <div className="d-block mb-6">
+                    {block.button &&
+                        <Link href={block.button.link} className="btn btn-primary btn-lg"> {block.button.text} </Link>
                     }
                 </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="feature-hero-banner">
-                <img src={block.image_path} alt="banner-image" loading="lazy" />
-                <div class="shape">
-                    <img
-                    src="/images/feature/effect-4.png"
-                    alt="shape"
-                    loading="lazy"
-                    />
+            <div className="col-lg-6">
+                <div className="feature-hero-banner">
+                <img src={block.image} alt={block.image_alt} loading="lazy" />
+                <div className="shape">
+                    <img src="/images/feature/effect-4.png" alt="shape" loading="lazy" />
                 </div>
                 </div>
             </div>

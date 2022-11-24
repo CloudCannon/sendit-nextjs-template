@@ -15,7 +15,6 @@ export async function getStaticPaths() {
 	const slugs = (await filer.listItemSlugs('pages')).map((slug) => ({ params: { slug } }));
 	const ignored = {
 		home: true,
-		privacy: true,
 		blog: true,
 		feed: true
 	};

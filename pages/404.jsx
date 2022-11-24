@@ -1,23 +1,23 @@
-import Link from 'next/link';
 import DefaultLayout from '../components/layouts/default';
-function Custom404() {
+import Blocks from '../components/shared/blocks';
+import Filer from '@cloudcannon/filer';
+const filer = new Filer({ path: 'content' });
+
+function Custom404({ page }) {
     return (
-      <DefaultLayout>
-        <section class="error py-xxl-12 py-lg-9 py-10 py-sm-6">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="error-content text-center">
-                  <img width="300" src="/images/404/error.png" class="" alt="error-image" />
-                  <h3 class="my-5">This page is missing.</h3>
-                  <Link href="/" class="btn btn-lg btn-primary">Go home</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <DefaultLayout page={page}>
+        <Blocks content_blocks={page.data.content_blocks} ></Blocks>
       </DefaultLayout>
     )
   }
   
 export default Custom404
+
+export async function getStaticProps({ params }) {
+	const page = await filer.getItem('404.md', { folder: 'pages' });
+	return {
+		props: {
+			page: JSON.parse(JSON.stringify(page))
+		}
+	};
+}

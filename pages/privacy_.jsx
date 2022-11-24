@@ -7,45 +7,45 @@ const filer = new Filer({ path: 'content' });
 function PrivacyPage({ page }) {
   return (
     <DefaultLayout page={page}>
-      <section class="privacy-hero">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="privacy-hero-content text-center">
+      <section className="privacy-hero">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="privacy-hero-content text-center">
                 <h1>{page.data.hero.title}</h1>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="privacy">
-        <div class="container">
-          <div class="row">
-            <div class="privacy-wrapper">
-              <div class="col-lg-7 mx-auto">
+      <section className="privacy">
+        <div className="container">
+          <div className="row">
+            <div className="privacy-wrapper">
+              <div className="col-lg-7 mx-auto">
                 <div
                   data-bs-spy="scroll"
                   data-bs-target="#navbar-example2"
                   data-bs-offset="0"
-                  class="scrollspy-example"
+                  className="scrollspy-example"
                   tabindex="0"
                 >
                   {page.data.privacy.map((privacy, i) => (
                     <>
-                        <div class="privacy-items" id={`item${i+1}`}>
-                          <div class="card">
-                            <h3 class="sub-title">{privacy.heading}</h3>
+                        <div className="privacy-items" id={`item${i+1}`}>
+                          <div className="card">
+                            <h3 className="sub-title">{privacy.heading}</h3>
                             {privacy.key === 'descriptive' &&
                               <>
                                 {privacy.texts.map((text, i) => (
-                                  <div class="card-body" key={i}>
-                                    <p class="card-text">{text.value}</p>
+                                  <div className="card-body" key={i}>
+                                    <p className="card-text">{text.value}</p>
                                   </div>
                                 ))}
                               </>
                             }
                             {privacy.key === 'bulletpoints' &&
-                              <div class="card-body">
+                              <div className="card-body">
                                 <ul>
                                   {privacy.texts.map((text, i) => (
                                       <li key={i}>{text.value}</li>
@@ -59,13 +59,13 @@ function PrivacyPage({ page }) {
                   ))}
                 </div>
               </div>
-              <div class="col-lg-4">
-                  <nav id="scrol-nav" class="navbar navbar-light privacy-nav">
-                    <ul class="nav nav-pills">
+              <div className="col-lg-4">
+                  <nav id="scrol-nav" className="navbar navbar-light privacy-nav">
+                    <ul className="nav nav-pills">
                       {page.data.privacy.map((privacy, i) => (
                         <>
-                          <li class="nav-item">
-                            <Link class={`nav-link ${i == 0 ? 'active': ''}`} href={`#item${i+1}`}>
+                          <li className="nav-item">
+                            <Link className={`nav-link ${i == 0 ? 'active': ''}`} href={`#item${i+1}`}>
                               {privacy.heading}
                             </Link>
                           </li>

@@ -18,7 +18,14 @@ module.exports = {
             icon: 'wysiwyg',
             _enabled_editors: [
                 "visual"
-            ]
+            ],
+            schemas: {
+                page:
+                {
+                    name: 'New Page',
+                    path: "schemas/page.md"
+                }
+            }
         },
         blog: {
             path: "content/posts",
@@ -27,33 +34,30 @@ module.exports = {
             _enabled_editors: [
                 "content",
                 "visual"
-            ]
+            ],
+            schemas: {
+                default: {
+                    path: 'schemas/post.md'
+                }
+            }
         }
     },
     _inputs: {
-        content: {
-            type: "markdown"
+        date: {
+            instance_value: "now"
         },
-        icon: {
-            type: "select",
-            options: {
-                values: [
-                    "ph-user-square"
-                ]
-            }
+        title_suffix: {
+            comment: "Added at the end of the title and highlighted in a different color"
         },
-        description: {
-            type: "markdown",
-            options: {
-                bold: true,
-                italic: true,
-                link: true,
-                removeformat: true
-            }
-        },
-        isActive: {
-            type: "switch"
-        },
+        // pagination.data: {
+        //   hidden: true
+        // },
+        // pagination.alias: {
+        //   hidden: true
+        // },
+        // pagination.size: {
+        //   type: "number"
+        // },
         "social[*].icon": {
             type: "select",
             options: {
@@ -65,6 +69,42 @@ module.exports = {
                     "ph-youtube-logo"
                 ]
             }
+        },
+        logo_url: {
+            comment: "Link for the logo in the top left of the footer"
+        },
+        copyright: {
+            comment: "Automatically prefixed with the current year"
+        },
+        isActive: {
+            type: "switch"
+        },
+        page_description: {
+            comment: "Defaults to the description set in the Site SEO data file"
+        },
+        favicon_icon: {
+            type: "image",
+            comment: "For the shortcut icon meta tag"
+        },
+        faivcon_image: {
+            type: "image",
+            comment: "For the icon meta tag"
+        },
+        canonical_url: {
+            comment: "Defaults to the pages url"
+        },
+        featured_image: {
+            comment: "Defaults to the image set in the Site SEO data file"
+        },
+        open_graph_type: {
+            comment: "Defaults to the type 'website'"
+        },
+        author_twitter_handle: {
+            comment: "Defaults to the twitter site value set in the Site SEO data file"
+        },
+        no_index: {
+            type: "checkbox",
+            comment: "When selected this removes the page from your sitemap and adds the noindex robots meta tag"
         }
     },
     _structures: {

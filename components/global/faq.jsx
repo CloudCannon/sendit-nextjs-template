@@ -1,21 +1,23 @@
 import FaqItem from './faqItem';
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
 
 export default function GlobalFaq( {block, dataBinding}) {
 	return (
-        <section class="faq-two">
-            <div class="container">
-                <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="section-header">
+        <section className="faq-two">
+            <div className="container">
+                <div className="row">
+                <div className="col-lg-8 mx-auto">
+                    <div className="section-header">
                     <h2>{block.title} <span>{block.title_suffix}</span></h2>
-                    <p>{block.description}</p>
+                    <div dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
                     </div>
                 </div>
                 </div>
-                <div class="row">
-                <div class="col-lg-12">
-                    <div class="accordion" id="accordionExample">
-                        {block.faq.map((q, i) => (
+                <div className="row">
+                <div className="col-lg-12">
+                    <div className="accordion" id="accordionExample">
+                        {block.FAQ.map((q, i) => (
                             <FaqItem faq={q} i={i} key={i} />
                         ))}
                     </div>

@@ -114,7 +114,7 @@
                   padding-left: $base-padding * 0.5;
                   margin-left: $base-margin * 1.5;
                }
-               &:not(:first-child)::after {
+               &::after {
                   position: absolute;
                   content: '';
                   background: $color-text-light;

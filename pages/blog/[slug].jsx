@@ -7,34 +7,34 @@ const { DateTime } = require("luxon");
 export default function Post({ page, posts }) {
 	return (
 		<DefaultLayout page={page}>
-			<section class="blog-details">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<article class="blog-single">
-						<div class="inner-blog-details">
-							<h2 class="w-xxl-70 w-xl-80 w-100">{page.data.title}</h2>
-							<div class="inner-blog-details-meta">
-								<ul class="list-unstyled">
-									<li class="list-inline-item">
+			<section className="blog-details">
+			<div className="container">
+				<div className="row">
+					<div className="col-lg-12">
+						<article className="blog-single">
+						<div className="inner-blog-details">
+							<h2 className="w-xxl-70 w-xl-80 w-100">{page.data.title}</h2>
+							<div className="inner-blog-details-meta">
+								<ul className="list-unstyled">
+									<li className="list-inline-item">
 									<p>{DateTime.fromISO(page.data.date, 'string').toLocaleString(DateTime.DATE_FULL)}</p>
 									</li>
-									<li class="list-inline-item">
+									<li className="list-inline-item">
 										<p>{ page.data.author}</p>
 									</li>
-									<li class="list-inline-item">
+									<li className="list-inline-item">
 										<p>{ page.data.readingTime } <span>minutes</span></p>
 									</li>
-									<li class="list-inline-item">
+									<li className="list-inline-item">
 										<p>{ page.data.wordCount } <span>words</span></p>
 									</li>
 								</ul>
 							</div>
 						</div>
-						<div class="rounded-box mb-xxl-11 mb-8">
+						<div className="rounded-box mb-xxl-11 mb-8">
 							<img
 								src={page.data.featuredImg.image_path}
-								class="w-100"
+								className="w-100"
 								alt="featured-image"
 							/>
 						</div>
@@ -45,36 +45,36 @@ export default function Post({ page, posts }) {
 			</div>
 			</section>
 
-			<section class="blog-related position-relative">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="blog-section">
-						<h2 class="blog-section-title">Recent Blog</h2>
+			<section className="blog-related position-relative">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-12">
+						<div className="blog-section">
+						<h2 className="blog-section-title">Recent Blog</h2>
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div className="row">
 
 					{ posts.map((post, i) => (
 						<PostSummary post={post} key={i}></PostSummary>
 					))}
 					{/* {{ range ( where site.RegularPages "Section" "blog" | first 3 ) }}
-					<div class="col-lg-4 col-md-6">
-						<article class="blog-post">
-						<div class="blog-post-thumb">
+					<div className="col-lg-4 col-md-6">
+						<article className="blog-post">
+						<div className="blog-post-thumb">
 							<a href="{{.Permalink | relURL}}">
 								<img src="{{.Params.thumbImg.image_path}}" alt="blog-thum" />
 							</a>
 						</div>
-						<div class="blog-post-content">
-							<div class="blog-post-tag">
+						<div className="blog-post-content">
+							<div className="blog-post-tag">
 								{{ range .Params.categories }} {{ $href := print (absURL "categories/") (urlize
 								.) }}
 								<a href="{{ $href }}">{{ . | humanize }}</a>
 								{{ end }}
 							</div>
-							<div class="blog-post-title">
+							<div className="blog-post-title">
 								<a href="{{.Permalink | relURL}}">{{.Params.title}}</a>
 							</div>
 						</div>

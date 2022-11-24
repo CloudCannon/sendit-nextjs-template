@@ -1,14 +1,16 @@
 import Link from "next/link";
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
 
 export default function ContactHero({ block, dataBinding }) {
     return (
-        <section class="contact-hero">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="contact-hero-content">
+        <section className="contact-hero">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6">
+                        <div className="contact-hero-content">
                             <h1>{block.title }</h1>
-                            <p>{block.description }</p>
+                            <div dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
                         </div>
                     </div>
                 </div>

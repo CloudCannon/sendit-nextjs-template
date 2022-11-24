@@ -3,6 +3,7 @@ date: 2022-03-10T00:00:00Z
 title: Email delivery tips
 categories:
   - Email
+  - marketing
 author: Gerard Hopper
 thumbImg:
   image_path: /images/blog/blog-thumb-1.jpg

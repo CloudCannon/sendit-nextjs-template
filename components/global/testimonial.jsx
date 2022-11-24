@@ -1,3 +1,7 @@
+
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
+
 export default function GlobalTestimonial({ block, dataBinding }) {
     return (
         <section className="testimonial">
@@ -6,7 +10,7 @@ export default function GlobalTestimonial({ block, dataBinding }) {
                     <div className="col-lg-8 mx-auto text-center mb-5">
                         <div className="testimonial-content">
                             <h2>{block.title} <span> {block.title_suffix}</span></h2>
-                            <p>{block.description}</p>
+                            <div dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
                         </div>
                     </div>
                 </div>
@@ -17,9 +21,9 @@ export default function GlobalTestimonial({ block, dataBinding }) {
                                 <div className="testimonial-item-person">
                                     <div className="thumb">
                                         <img
-                                            src={slide.image_path}
+                                            src={slide.image}
                                             alt="logo"
-                                            className="img-fluid"
+                                            className={slide.image_alt}
                                             loading="lazy"
                                         />
                                     </div>

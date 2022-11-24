@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function PricingTier( {tier}) {
 
     let pricing = ''
-    if (tier.hasDiscount){
+    if (tier.has_discount){
         pricing = <>
             <div className="price">
-            <p className="pricingtable">${tier.discountPrice}</p>
+            <p className="pricingtable">${tier.discount_price}</p>
             <div className="discount">
                 <p>${tier.price}</p>
                 <div className="vector vector-one">
@@ -30,7 +30,7 @@ export default function PricingTier( {tier}) {
     }
 	return (
         <div className="col-lg-4">
-            <div className={`card pricing-item ${tier.isActive ? 'active' : ''}`}>
+            <div className={`card pricing-item ${tier.is_active ? 'active' : ''}`}>
                 <h5 className="card-title">{tier.tier}</h5>
                 <p className="card-text">
                 {tier.description}
@@ -40,16 +40,16 @@ export default function PricingTier( {tier}) {
                 <ul className="list-unstyled">
                     
                     {tier.feature.map((feature, i) => (
-                        <li key={i} className={feature.isActive? '': 'deactive'}>
-                            <i className={`ph-check ${feature.isActive? '': 'deactive'}`}></i>
+                        <li key={i} className={feature.is_active? '': 'deactive'}>
+                            <i className={`ph-check ${feature.is_active? '': 'deactive'}`}></i>
                             {feature.item}
                         </li>
                     ))}
                 </ul>
                 <div className="link">
-                    { tier.btn &&
-                        <Link href={tier.btn.link} className="btn btn-lg btn-white">
-                            {tier.btn.text}
+                    { tier.button &&
+                        <Link href={tier.button.link} className="btn btn-lg btn-white">
+                            {tier.button.text}
                         </Link>
                     }
                 </div>

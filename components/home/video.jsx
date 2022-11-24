@@ -7,9 +7,9 @@ export default function HomeVideo({ block, dataBinding }) {
                         <div className="banner">
                             <div className="rounded-box">
                                 <img
-                                    src={block.image_path}
+                                    src={block.image}
                                     className="w-100"
-                                    alt="banner-image"
+                                    alt={block.image_alt}
                                     loading="lazy"
                                 />
                             </div>

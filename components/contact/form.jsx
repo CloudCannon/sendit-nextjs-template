@@ -2,27 +2,27 @@ import Link from "next/link";
 
 export default function ContactHero({ block, dataBinding }) {
     return (
-        <section class="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 me-auto order-2 order-lg-1">
-                        <div class="contact-form-Information">
-                            <div class="address">
+        <section className="contact">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-5 me-auto order-2 order-lg-1">
+                        <div className="contact-form-Information">
+                            <div className="address">
                                 { block.address && 
                                     <>
                                     <h3>{block.address.heading }</h3>
                                     <p>{block.address.address }</p>
                                     </>
                                 }
-                                <div class="item mb-4">
+                                <div className="item mb-4">
                                     { block.phone && 
                                         <>
                                             <h3>{block.phone.heading }</h3>
                                             <Link href={`tel:${block.phone.cell}`}>{block.phone.cell}
                                                 <span>
                                                     <img
-                                                        src="/images/contact/call-add.svg"
-                                                        alt="call-add"
+                                                        src={block.phone.image}
+                                                        alt={block.phone.image_alt}
                                                         loading="lazy"
                                                     />
                                                 </span>
@@ -30,7 +30,7 @@ export default function ContactHero({ block, dataBinding }) {
                                         </>
                                     }
                                 </div>
-                                <div class="item">
+                                <div className="item">
 
                                     { block.email && 
                                         <>
@@ -38,8 +38,8 @@ export default function ContactHero({ block, dataBinding }) {
                                             <Link href={`tel:${block.email.email}`}>{block.email.email}
                                                 <span>
                                                     <img
-                                                        src="/images/contact/directbox-send.svg"
-                                                        alt="send-box"
+                                                        src={block.email.image}
+                                                        alt={block.email.image_alt}
                                                         loading="lazy"
                                                     />
                                                 </span>
@@ -50,38 +50,38 @@ export default function ContactHero({ block, dataBinding }) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 order-1 order-lg-2">
-                        <div class="contact-form">
+                    <div className="col-lg-6 order-1 order-lg-2">
+                        <div className="contact-form">
 
                             { block.form && 
                                 <>
                                     <form method="post">
                                         <h3>{block.form.heading }</h3>
-                                        { block.form.fullName && 
+                                        { block.form.fullname && 
                                             <>
-                                                <div class="col-md-12">
-                                                    <label for="Name" class="label">{block.form.fullName.heading}</label>
+                                                <div className="col-md-12">
+                                                    <label for="Name" className="label">{block.form.fullname.heading}</label>
                                                     <input
                                                         type="text"
-                                                        class="form-control"
+                                                        className="form-control"
                                                         id="Name"
                                                         name="name"
-                                                        placeholder={block.form.fullName.placeHolder}
+                                                        placeholder={block.form.fullname.placeholder}
                                                         required=""
                                                     />
                                                 </div>
                                             </>
                                         }
-                                        { block.form.phoneNumber && 
+                                        { block.form.phone_number && 
                                             <>
-                                                <div class="col-md-12">
-                                                    <label for="phone-number" class="label">{block.form.phoneNumber.heading}</label>
+                                                <div className="col-md-12">
+                                                    <label for="phone-number" className="label">{block.form.phone_number.heading}</label>
                                                     <input
                                                         type="tel"
-                                                        class="form-control"
+                                                        className="form-control"
                                                         id="phone-number"
                                                         name="phone-number"
-                                                        placeholder={block.form.phoneNumber.placeHolder}
+                                                        placeholder={block.form.phone_number.placeholder}
                                                         required=""
                                                     />
                                                 </div>
@@ -89,14 +89,14 @@ export default function ContactHero({ block, dataBinding }) {
                                         }
                                         { block.form.email && 
                                             <>
-                                                <div class="col-md-12">
-                                                    <label for="email" class="label">{block.form.email.heading}</label>
+                                                <div className="col-md-12">
+                                                    <label for="email" className="label">{block.form.email.heading}</label>
                                                     <input
                                                         type="email"
-                                                        class="form-control mb-6"
+                                                        className="form-control mb-6"
                                                         id="email"
                                                         name="_replyto"
-                                                        placeholder={block.form.email.placeHolder}
+                                                        placeholder={block.form.email.placeholder}
                                                         required=""
                                                     />
                                                 </div>
@@ -104,13 +104,13 @@ export default function ContactHero({ block, dataBinding }) {
                                         }
                                         { block.form.message && 
                                             <>
-                                                <div class="col-md-12">
-                                                    <label for="message" class="label">{block.form.message.heading}</label>
+                                                <div className="col-md-12">
+                                                    <label for="message" className="label">{block.form.message.heading}</label>
                                                     <textarea
-                                                        class="form-control mb-4"
+                                                        className="form-control mb-4"
                                                         id="floatingTextarea2"
                                                         name="message"
-                                                        placeholder={block.form.message.placeHolder}
+                                                        placeholder={block.form.message.placeholder}
                                                         rows="8"
                                                         spellcheck="false"
                                                     />
@@ -119,17 +119,17 @@ export default function ContactHero({ block, dataBinding }) {
                                         }
                                         <input type="text" name="_gotcha" style={{display: 'none'}} />
 
-                                        { block.form.submitBtn && 
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary btn-lg mt-7">
-                                                    <span class="position-relative">{block.form.submitBtn.text }</span>
+                                        { block.form.submit_button && 
+                                            <div className="col-12">
+                                                <button type="submit" className="btn btn-primary btn-lg mt-7">
+                                                    <span className="position-relative">{block.form.submit_button.text }</span>
                                                 </button>
                                             </div>
                                         }
                                     </form>
                                 </>
                             }
-                            <div class="effect">
+                            <div className="effect">
                                 <img
                                     src="/images/contact/effects.png"
                                     alt="effects"
