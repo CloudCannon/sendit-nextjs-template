@@ -1,7 +1,5 @@
 ---
 title: Feature
-permalink: /feature/
-layout: base.liquid
 seo:
   page_description: 
   canonical_url: 
