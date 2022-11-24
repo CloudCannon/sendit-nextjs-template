@@ -7,7 +7,7 @@ const getComponentKey = (name) => {
 function Blocks({ children, content_blocks }) {
     return <>
         {content_blocks.map((block, i) =>{
-            const newDataBinding = `content_blocks.${i}}`
+            const newDataBinding = `content_blocks.${i}`
             const componentPath = getComponentKey(block._bookshop_name);
 
             const TargetComponent = Object.entries(components).filter(([k]) =>
