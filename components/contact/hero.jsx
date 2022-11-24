@@ -4,7 +4,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function ContactHero({ block, dataBinding }) {
     return (
-        <section className="contact-hero">
+        <section className="contact-hero" data-cms-binding={dataBinding}>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6">

@@ -1,6 +1,6 @@
 export default function GlobalLogin({ block, dataBinding }) {
     return (
-        <section className="sing-up pt-md-20 pt-18 pb-md-20 pb-10">
+        <section className="sing-up pt-md-20 pt-18 pb-md-20 pb-10" data-cms-binding={dataBinding}>
             <div className="container">
                 <div className="row">
                     <div className="col-xxl-7 col-lg-8 mx-auto">

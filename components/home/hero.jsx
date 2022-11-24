@@ -4,7 +4,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function HomeHero( {block, dataBinding}) {
 	return (
-		<section className="hero-two">
+		<section className="hero-two" data-cms-binding={dataBinding}>
             <div className="hero-two-shape">
                 <img src="/images/hero/hero-two-shape.png" alt="shape" />
             </div>

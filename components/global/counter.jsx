@@ -7,6 +7,7 @@ export default function GlobalCounter( {block, dataBinding}) {
         <section
         className={`counter-up ${block.alternate_style ? 'counter-up-two pb-xxl-14 pb-lg-13': ''}`}
         id="counter-up"
+        data-cms-binding={dataBinding}
         >
             <div className="container">
                 <div className="row">

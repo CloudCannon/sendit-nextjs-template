@@ -1,6 +1,6 @@
 export default function HomeVideo({ block, dataBinding }) {
     return (
-        <section className="video pb-xxl-22 pb-lg-18 pb-12">
+        <section className="video pb-xxl-22 pb-lg-18 pb-12" data-cms-binding={dataBinding}>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-10 mx-auto">

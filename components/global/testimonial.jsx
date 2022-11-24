@@ -4,7 +4,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function GlobalTestimonial({ block, dataBinding }) {
     return (
-        <section className="testimonial">
+        <section className="testimonial" data-cms-binding={dataBinding}>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-8 mx-auto text-center mb-5">

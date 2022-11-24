@@ -4,7 +4,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function GlobalFaq( {block, dataBinding}) {
 	return (
-        <section className="faq-two">
+        <section className="faq-two" data-cms-binding={dataBinding}>
             <div className="container">
                 <div className="row">
                 <div className="col-lg-8 mx-auto">
