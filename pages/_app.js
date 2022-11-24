@@ -4,7 +4,10 @@ import {CloudCannonConnect} from '@cloudcannon/react-connector'
 
 export default function App({ Component, pageProps }) {
 	const AppComponent = CloudCannonConnect(Component, {
-		processProps: (props) => (pageProps === props) ? { data: props } : props
+		processProps: (props) => {
+			console.log(props)
+			return props;
+		}
 	});
 	return <AppComponent {...pageProps}/>
 }
