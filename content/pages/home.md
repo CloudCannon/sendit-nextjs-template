@@ -1,7 +1,5 @@
 ---
-permalink: /
 title: Home
-layout: base.liquid
 content_blocks:
   - _bookshop_name: home/hero
     title: Beautiful email campaigns
