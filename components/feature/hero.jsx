@@ -4,7 +4,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function FeatureHero( {block, dataBinding}) {
 	return (
-        <section className="feature-hero" data-cms-binding={dataBinding}>
+        <section className="feature-hero" data-cms-bind={dataBinding}>
             <div className="container">
                 <div className="row align-items-center">
                 <div className="col-lg-6">

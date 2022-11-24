@@ -3,7 +3,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function PricingHero( {block, dataBinding}) {
 	return (
-        <section className="pricing-inner @@bg-color" data-cms-binding={dataBinding}>
+        <section className="pricing-inner @@bg-color" data-cms-bind={dataBinding}>
             <div className="container">
                 <div className="row">
                 <div className="col-lg-8 mx-auto">

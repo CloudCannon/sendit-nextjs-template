@@ -18,7 +18,7 @@ export default function AboutHero({ block, dataBinding }) {
     };
 
     return (
-        <section className="about-hero-two" data-cms-binding={dataBinding}>
+        <section className="about-hero-two" data-cms-bind={dataBinding}>
             <div className="container">
                 <div className="row">
                     <div className="col-xl-5 col-lg-10 mx-auto">

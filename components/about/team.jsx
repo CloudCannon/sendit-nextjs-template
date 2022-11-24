@@ -1,6 +1,6 @@
 export default function AboutTeam({ block, dataBinding }) {
     return (
-        <div className="team" data-cms-binding={dataBinding}>
+        <div className="team" data-cms-bind={dataBinding}>
             <div className="container">
                 <div className="row">
                 <div className="col-lg-10 col-xl-7 mx-auto">

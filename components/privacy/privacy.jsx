@@ -4,7 +4,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function PrivacyPrivacy( {block, dataBinding}) {
 	return (
-        <section class="privacy" data-cms-binding={dataBinding}>
+        <section class="privacy" data-cms-bind={dataBinding}>
             <div class="container">
                 <div class="row">
                 <div class="privacy-wrapper">

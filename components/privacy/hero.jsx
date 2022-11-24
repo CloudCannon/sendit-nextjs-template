@@ -1,6 +1,6 @@
 export default function PrivacyHero( {block, dataBinding}) {
 	return (
-        <section class="privacy-hero" data-cms-binding={dataBinding}>
+        <section class="privacy-hero" data-cms-bind={dataBinding}>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

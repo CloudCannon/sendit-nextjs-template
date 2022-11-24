@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ContactHero({ block, dataBinding }) {
     return (
-        <section className="contact" data-cms-binding={dataBinding}>
+        <section className="contact" data-cms-bind={dataBinding}>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-5 me-auto order-2 order-lg-1">

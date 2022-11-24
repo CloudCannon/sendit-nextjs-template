@@ -4,7 +4,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function GlobalHeader( {block, dataBinding}) {
 	return (
-        <section className="feature pt-0 pb-0" data-cms-binding={dataBinding}>
+        <section className="feature pt-0 pb-0" data-cms-bind={dataBinding}>
         <div className="container">
             <div className="row">
             <div className="col-lg-8 mx-auto">

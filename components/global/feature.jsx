@@ -72,7 +72,7 @@ export default function GlobalFeature( {block, dataBinding}) {
         </>
     }
 	return (
-        <section className="feature pt-sm-10 pt-5 pb-4" data-cms-binding={dataBinding}>
+        <section className="feature pt-sm-10 pt-5 pb-4" data-cms-bind={dataBinding}>
             <div className="container">
                 {content}
             </div>

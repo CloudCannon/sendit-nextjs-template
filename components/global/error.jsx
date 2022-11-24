@@ -5,7 +5,7 @@ const md = new MarkdownIt({ html: true });
 
 export default function GlobalError({block, dataBinding}) {
 	return (
-        <section className="error py-xxl-12 py-lg-9 py-10 py-sm-6" data-cms-binding={dataBinding}>
+        <section className="error py-xxl-12 py-lg-9 py-10 py-sm-6" data-cms-bind={dataBinding}>
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
