@@ -1,6 +1,6 @@
 
-import MarkdownIt from 'markdown-it';
 import Link from 'next/link';
+import MarkdownIt from 'markdown-it';
 const md = new MarkdownIt({ html: true });
 
 export default function GlobalError({block, dataBinding}) {

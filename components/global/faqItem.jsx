@@ -1,3 +1,6 @@
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
+
 export default function GlobalFaqItem( {faq, i}) {
     const handleClick = event => {
         var current = document.getElementsByClassName('shows');
@@ -29,7 +32,7 @@ export default function GlobalFaqItem( {faq, i}) {
             aria-labelledby={`heading${i}`}
             data-bs-parent="#accordionExample"
             >
-            <div className="accordion-body">{faq.description}</div>
+            <div className="accordion-body" dangerouslySetInnerHTML={{ __html: md.render(faq.description) }}></div>
             </div>
         </div>
 	);
