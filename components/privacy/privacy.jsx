@@ -28,7 +28,7 @@ export default function PrivacyPrivacy( {block, dataBinding}) {
                         <>
                             <div className="privacy-items" id={`item${i+1}`} key={i}>
                             <div className="card">
-                                <h3 className="sub-title">{privacy.heading}</h3>
+                                <h3 className="sub-title" style={{"padding-top": "40px", "margin-top": "-40px"}}>{privacy.heading}</h3>
                                 <div className="card-body">
                                     <div className="card-text" dangerouslySetInnerHTML={{ __html: md.render(privacy.description) }}/>
                                 </div>
