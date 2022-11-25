@@ -23,7 +23,7 @@ export default function Footer({ children, page }) {
                                     <ul className="list-unstyled">
                                         {data.footer.social.map((link, i) => (
                                             <li key={i}>
-                                                <Link href={`${data.site.baseurl}${link.link}`}>
+                                                <Link href={`${link.link}`}>
                                                     <i className={link.social_icon}></i>
                                                 </Link>
                                             </li>
@@ -40,7 +40,7 @@ export default function Footer({ children, page }) {
                                             <ul className="list-unstyled">
                                                 {section.links.map((link, i) => (
                                                     <li key={i}>
-                                                        <Link href={`${data.site.baseurl}${link.link}`}>
+                                                        <Link href={`${link.link}`}>
                                                             {link.text}
                                                         </Link>
                                                     </li>

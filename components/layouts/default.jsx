@@ -1,60 +1,73 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import data from '../../lib/data';
-import Icon from '../../components/icon';
 import Navigation from './navigation';
 import Footer from './footer';
 
 export default function DefaultLayout({ children, page }) {
-	const title = page?.data.title ? `${page.data.title} | ${data.seo.site_title}` : data.seo.site_title;
-	const description = page?.data.description || data.seo.description;
+	const title = page?.data.title ? `${page.data.title} | ${data.site.site_title}` : data.site.site_title;
+	const description = page?.data.seo?.page_description || data.site.description;
+	const image = page?.data.seo?.feature_image || data.site.image;
+	const image_alt = page?.data.seo?.feature_image_alt || data.site.image_alt;
 
 	return (
 		<>
 			<Head>
 				<meta charset="utf-8" />
 
-				{/* mobile responsive meta */}
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta
-				name="viewport"
-				content="width=device-width, initial-scale=1, maximum-scale=5"
-				/>
 
 				<link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
 				<link href="/vendor/phosphor-icons/css/phosphor.css" rel="stylesheet" />
 				<link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
 
-				<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-				<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-
-				
-				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-				<link rel="apple-touch-icon" href={`${data.site.baseurl}/apple-touch-icon.png`} />
-				<link rel="icon" type="image/png" href={`${data.site.baseurl}/touch-icon.png`} sizes="192x192" />
-				<link rel="icon" type="image/png" href={`${data.site.baseurl}/images/favicon.png`} />
-
 			</Head>
 
-			<NextSeo
+			<NextSeo noindex={page.data.seo?.no_index || false}
 				title={title}
 				description={description}
+				canonical={`${data.site.baseurl}${page.seo?.canonical_url || page.slug}`}
 				openGraph={{
-					site_name: data.seo.site_name,
-					url: data.site.url,
+					url: data.site.baseurl,
 					title: title,
 					description: description,
-					images: data.seo.images.map((image) => ({
-						url: image.image,
-						width: image.height,
-						height: image.width,
-						alt: image.description
-					}))
+					type: `${ page.data.seo?.open_graph_type || 'website' }`,
+					images: [{
+						url: image,
+						alt: image_alt
+					}]
 				}}
+				twitter={{
+					handle: `${ page.data.seo?.author_twitter_handle || data.site.twitter_site }`,
+					site: `${ data.site.twitter_site }`,
+					cardType: 'summary_large_image',
+				}}
+				additionalLinkTags={[
+					{
+					  rel: 'icon',
+					  href: '/images/favicon.png',
+					  type: "image/x-icon"
+					},
+					{
+						rel:"shortcut icon", 
+						href:"/images/favicon.ico", 
+						type: "image/x-icon"
+					},
+					{ 
+						rel:"apple-touch-icon", 
+						href:"/apple-touch-icon.png" },
+					{ 
+						rel:"icon", 
+						type: "image/png", 
+						href:"/touch-icon.png", 
+						sizes: "192x192" },
+					{ 
+						rel:"icon", 
+						type: "image/png", 
+						href:"/images/favicon.png" },
+				  ]}
 			/>
+
 			<Navigation page={page}/>
             {children}
 			<Footer page={page}/>

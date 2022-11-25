@@ -114,7 +114,7 @@ export default function Navigation({ children, page }) {
 
                                 {data.navigation.items.map((link, i) => (
                                     <li key={i} className="nav-item">
-                                        <Link href={`${data.site.baseurl}${link.link}`} className={`nav-link ${page?.slug?.toLowerCase() === link.text.toLowerCase() ? 'active' : ''}`}>
+                                        <Link href={`${link.link}`} className={`nav-link ${page?.slug?.toLowerCase() === link.text.toLowerCase() ? 'active' : ''}`}>
                                             {link.text}
                                         </Link>
                                     </li>
@@ -123,7 +123,7 @@ export default function Navigation({ children, page }) {
                         </div>
                         <div className="d-none d-lg-block">
                             <div className="nav-item">
-                                <Link href={`${data.site.baseurl}${data.navigation.btn.link}`} className="btn btn-sm btn-links">
+                                <Link href={`${data.navigation.btn.link}`} className="btn btn-sm btn-links">
                                     {data.navigation.btn.text}
                                 </Link>
                             </div>

@@ -7,18 +7,18 @@ export default function PostSummary({ post }) {
         <div className="col-lg-4 col-md-6">
             <article className="blog-post">
                 <div className="blog-post-thumb">
-                    <Link href={ `${data.site.baseurl}/blog/${post.slug}` }>
-                        <img src={`${post.data.thumbImg.image_path}`} alt="blog-thumb" loading="lazy" />
+                    <Link href={ `/blog/${post.slug}` }>
+                        <img src={post.data.thumbImg.image} alt={post.data.thumbImg.image_alt} loading="lazy" />
                     </Link>
                 </div>
                 <div className="blog-post-content">
                     <div className="blog-post-tag @@category">
-                        { post.data.categories.slice(0, 2).map((category, i) => (
-                            <Link href={`categories/${category.toLowerCase()}`} key={i}>{category}</Link>
+                        { post.data.tags.slice(0, 2).map((tag, i) => (
+                            <Link href={`categories/${tag.toLowerCase()}`} key={i}>{tag}</Link>
                         ))}
                     </div>
                     <div className="blog-post-title">
-                        <Link href={ `${data.site.baseurl}/blog/${post.slug}` }>{post.data.title}</Link>
+                        <Link href={ `/blog/${post.slug}` }>{post.data.title}</Link>
                     </div>
                 </div>
             </article>

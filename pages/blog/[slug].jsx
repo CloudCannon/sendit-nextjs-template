@@ -1,12 +1,25 @@
 import DefaultLayout from '../../components/layouts/default';
 import Filer from '@cloudcannon/filer';
 import PostSummary from '../../components/posts/summary';
+import data from '../../lib/data';
+import { ArticleJsonLd } from 'next-seo';
 const filer = new Filer({ path: 'content' });
 const { DateTime } = require("luxon");
 
 export default function Post({ page, posts }) {
 	return (
 		<DefaultLayout page={page}>
+			
+			<ArticleJsonLd
+				type="BlogPosting"
+				url={`${data.site.baseurl}${page.data.seo?.canonical_url || page.slug}`}
+				title={page.data.title}
+				images={[page.data.seo?.featured_image || page.data.featuredImg.image || null]}
+				datePublished={page.data.date}
+				dateModified={page.data.date}
+				authorName={page.data.author}
+				description={page.data.seo?.page_description}
+			/>
 			<section className="blog-details">
 			<div className="container">
 				<div className="row">
@@ -33,9 +46,9 @@ export default function Post({ page, posts }) {
 						</div>
 						<div className="rounded-box mb-xxl-11 mb-8">
 							<img
-								src={page.data.featuredImg.image_path}
+								src={page.data.featuredImg.image}
 								className="w-100"
-								alt="featured-image"
+								alt={page.data.featuredImg.image_alt}
 							/>
 						</div>
 						<div style={{"max-width": "900px", margin: "0 auto" }} dangerouslySetInnerHTML={{ __html: page.content_html }}></div>
