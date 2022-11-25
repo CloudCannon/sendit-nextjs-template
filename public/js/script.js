@@ -46,12 +46,6 @@ els.forEach(el => {
       }
    });
 
-   // Scroll spy style start
-   $('.nav-link').click(function () {
-      console.log('click navlink')
-      $('.nav-link').removeClass('active');
-      $(this).addClass('active');
-   });
    // Scroll spy
    $(document).ready(function () {
       $('body').scrollspy({
