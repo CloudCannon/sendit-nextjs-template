@@ -14,7 +14,7 @@ export default function PostSummary({ post }) {
                 <div className="blog-post-content">
                     <div className="blog-post-tag @@category">
                         { post.data.tags.slice(0, 2).map((tag, i) => (
-                            <Link href={`categories/${tag.toLowerCase()}`} key={i}>{tag}</Link>
+                            <Link href={`/tags/${tag.toLowerCase()}`} key={i}>{tag}</Link>
                         ))}
                     </div>
                     <div className="blog-post-title">
