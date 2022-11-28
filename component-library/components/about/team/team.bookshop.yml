@@ -2,17 +2,19 @@
 spec:
   structures:
     - content_blocks
-  label: Header
-  description: Header section
-  icon: "task"
+  label: About Team
+  description: About Team section
+  icon: "groups"
   tags: []
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  title: Sendit
-  title_suffix: Features
-  description: Sendit is the most complete solution to create beautiful email designs, manage mails and send them out at the best price.
-  no_top_pad: false
+  title: Our leadership & Team Members
+  team_members:
+    - name: Cody Fisher
+      designation: Co-Founder & CEO
+      image: /images/team/team-member-1.jpg
+      image_alt: "Team member: Cody Fisher"
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
