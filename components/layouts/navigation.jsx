@@ -123,8 +123,8 @@ export default function Navigation({ children, page }) {
                         </div>
                         <div className="d-none d-lg-block">
                             <div className="nav-item">
-                                <Link href={`${data.navigation.btn.link}`} className="btn btn-sm btn-links">
-                                    {data.navigation.btn.text}
+                                <Link href={`${data.navigation.button.link}`} className="btn btn-sm btn-links">
+                                    {data.navigation.button.text}
                                 </Link>
                             </div>
                         </div>

@@ -6,5 +6,10 @@
     "favicon_image": "/images/favicon.png",
     "twitter_site": "@twitter_site",
     "image": "/images/feature/feature-hero.png",
-    "image_alt": "/images/feature/feature-hero.png"
+    "image_alt": "Charts",
+    "_inputs": {
+        "twitter_site": {
+            "type": "twitter"
+        }
+    }
 }

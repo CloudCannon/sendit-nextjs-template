@@ -2,7 +2,7 @@ import PostSummary from '../../components/posts/summary';
 import MarkdownIt from 'markdown-it';
 const md = new MarkdownIt({ html: true });
 
-export default function BlogList({ page, posts }) {
+export default function BlogList({ page, posts, headline }) {
 	return (
 		<>
         <section className="blog-hero pt-xl-22 pt-sm-20 pt-18 pb-xxl-25 pb-xl-23 pb-22 position-relative">
@@ -10,7 +10,7 @@ export default function BlogList({ page, posts }) {
                 <div className="row">
                 <div className="col-xl-8 col-lg-10 mx-auto">
                     <div className="blog-hero-content">
-                        <h1 className="blog-hero-title">{page.data.title}</h1>
+                        <h1 className="blog-hero-title">{headline || page.data.title}</h1>
                         <div dangerouslySetInnerHTML={{ __html: md.render(page.data.description) }}/>
                     </div>
                 </div>

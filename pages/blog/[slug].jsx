@@ -35,12 +35,12 @@ export default function Post({ page, posts }) {
 									<li className="list-inline-item">
 										<p>{ page.data.author}</p>
 									</li>
-									<li className="list-inline-item">
+									{/* <li className="list-inline-item">
 										<p>{ page.data.readingTime } <span>minutes</span></p>
 									</li>
 									<li className="list-inline-item">
 										<p>{ page.data.wordCount } <span>words</span></p>
-									</li>
+									</li> */}
 								</ul>
 							</div>
 						</div>
@@ -72,28 +72,6 @@ export default function Post({ page, posts }) {
 					{ posts.map((post, i) => (
 						<PostSummary post={post} key={i}></PostSummary>
 					))}
-					{/* {{ range ( where site.RegularPages "Section" "blog" | first 3 ) }}
-					<div className="col-lg-4 col-md-6">
-						<article className="blog-post">
-						<div className="blog-post-thumb">
-							<a href="{{.Permalink | relURL}}">
-								<img src="{{.Params.thumbImg.image_path}}" alt="blog-thum" />
-							</a>
-						</div>
-						<div className="blog-post-content">
-							<div className="blog-post-tag">
-								{{ range .Params.categories }} {{ $href := print (absURL "categories/") (urlize
-								.) }}
-								<a href="{{ $href }}">{{ . | humanize }}</a>
-								{{ end }}
-							</div>
-							<div className="blog-post-title">
-								<a href="{{.Permalink | relURL}}">{{.Params.title}}</a>
-							</div>
-						</div>
-						</article>
-					</div>
-					{{ end }} */}
 				</div>
 			</div>
 			</section>

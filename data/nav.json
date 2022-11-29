@@ -26,8 +26,13 @@
 			"text": "Contact"
 		}
 	],
-	"btn": {
+	"button": {
 		"link": "/signup/",
 		"text": "Get Started"
+	},
+	"_inputs": {
+	  "logo": {
+		"type": "image"
+	  }
 	}
 }

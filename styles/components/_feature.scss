@@ -473,14 +473,6 @@
 
       .Learn-more {
         margin-top: $base-margin * 4.6;
-
-        @include media-breakpoint-down-md {
-          margin-top: $base-margin * 2.5;
-        }
-
-        @include media-breakpoint-down-sm {
-          margin-top: $base-margin * 1.25;
-        }
       }
     }
 
