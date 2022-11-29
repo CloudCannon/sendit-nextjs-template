@@ -2,6 +2,7 @@
 import DefaultLayout from '../../components/layouts/default';
 import Filer from '@cloudcannon/filer';
 import BlogList from '../../components/blog/list';
+import {capitalise} from '../../lib/string-helper';
 
 const filer = new Filer({ path: 'content' });
 
@@ -39,7 +40,7 @@ export async function getStaticProps({ params }) {
     props: {
       page: JSON.parse(JSON.stringify(page)),
       posts: JSON.parse(JSON.stringify(filteredPosts)),
-      headline: params.slug.charAt(0).toUpperCase() + params.slug.slice(1)
+      headline: capitalise(params.slug)
     }
   };
 }
