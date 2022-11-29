@@ -45,26 +45,23 @@ export default function DefaultLayout({ children, page }) {
 				additionalLinkTags={[
 					{
 					  rel: 'icon',
-					  href: '/images/favicon.png',
+					  href: `${ data.site.favicon_image }`,
 					  type: "image/x-icon"
 					},
 					{
 						rel:"shortcut icon", 
-						href:"/images/favicon.ico", 
+						href:`${ data.site.favicon_icon }`, 
 						type: "image/x-icon"
 					},
 					{ 
 						rel:"apple-touch-icon", 
-						href:"/apple-touch-icon.png" },
+						href:`${ data.site.favicon_image }`
+					},
 					{ 
 						rel:"icon", 
 						type: "image/png", 
-						href:"/touch-icon.png", 
-						sizes: "192x192" },
-					{ 
-						rel:"icon", 
-						type: "image/png", 
-						href:"/images/favicon.png" },
+						href:`${ data.site.favicon_image }`,
+					}
 				  ]}
 			/>
 
