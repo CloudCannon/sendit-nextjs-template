@@ -1,7 +1,5 @@
 ---
 title: Sign Up
-permalink: /signup/
-layout: base.liquid
 seo:
   page_description: 
   canonical_url: 

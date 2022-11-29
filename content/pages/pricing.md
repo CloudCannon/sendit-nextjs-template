@@ -1,7 +1,5 @@
 ---
 title: Pricing
-permalink: /pricing/
-layout: base.liquid
 seo:
   page_description: 
   canonical_url: 

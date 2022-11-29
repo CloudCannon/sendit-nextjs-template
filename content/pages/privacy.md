@@ -1,7 +1,5 @@
 ---
-permalink: /privacy/
 title: Privacy
-layout: base.liquid
 seo:
   page_description:
   canonical_url:
