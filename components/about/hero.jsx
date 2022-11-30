@@ -1,4 +1,6 @@
 import Link from "next/link";
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({ html: true });
 
 export default function AboutHero({ block, dataBinding }) {
 
@@ -22,7 +24,7 @@ export default function AboutHero({ block, dataBinding }) {
                     <div className="col-xl-5 col-lg-10 mx-auto">
                         <div className="about-hero-two-content position-relative">
                             <h2>{block.title}</h2>
-                            <div dangerouslySetInnerHTML={{ __html: block.description }}/>
+                            <div dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
                             <div className="scroll-down d-flex justify-content-center justify-content-xl-start">
                                 {block.button &&
                                     <Link href={block.button.link} className="btn btn-primary btn-lg"> {block.button.text} </Link>

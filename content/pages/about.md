@@ -11,7 +11,7 @@ seo:
 content_blocks:
   - _bookshop_name: about/hero
     title: On a mission to change email marketing
-    description: <p>We're here to breathe new air into email marketing and help grow your business.</p>
+    description: We're here to breathe new air into email marketing and help grow your business.
     hero_images:
       - image: /images/about/aboutfeature-two.jpg
         image_alt: People working on laptops
@@ -29,7 +29,7 @@ content_blocks:
   - _bookshop_name: global/counter
     title: Built for your
     title_suffix: Business
-    description: <p>We've built Sendit from the ground up the help grow your business faster.</p>
+    description: We've built Sendit from the ground up the help grow your business faster.
     alternate_style: true
     numbers:
       - prefix: $
@@ -47,7 +47,7 @@ content_blocks:
 
   - _bookshop_name: about/video
     title: We love what we do
-    description: <p>Our team has decades of experience working with email marketing campaigns and we’re passionate about helping you connect with your customers.</p>
+    description: Our team has decades of experience working with email marketing campaigns and we’re passionate about helping you connect with your customers.
     button:
       link: https://www.linkedin.com/
       text: Follow on Linkedin
