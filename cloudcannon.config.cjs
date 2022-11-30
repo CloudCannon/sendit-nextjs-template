@@ -105,6 +105,9 @@ module.exports = {
         no_index: {
             type: "checkbox",
             comment: "When selected this removes the page from your sitemap and adds the noindex robots meta tag"
+        },
+        description:{
+            type: "html"
         }
     },
     _structures: {
