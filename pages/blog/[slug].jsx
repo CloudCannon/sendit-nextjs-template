@@ -7,6 +7,10 @@ const filer = new Filer({ path: 'content' });
 const { DateTime } = require("luxon");
 
 export default function Post({ page, posts }) {
+
+	const wordCount = page.content.split(" ").length;
+	const readingTime  = Math.floor(wordCount / 183)
+
 	return (
 		<DefaultLayout page={page}>
 			
@@ -35,12 +39,12 @@ export default function Post({ page, posts }) {
 									<li className="list-inline-item">
 										<p>{ page.data.author}</p>
 									</li>
-									{/* <li className="list-inline-item">
-										<p>{ page.data.readingTime } <span>minutes</span></p>
+									<li className="list-inline-item">
+										<p>{ readingTime } <span>minutes</span></p>
 									</li>
 									<li className="list-inline-item">
-										<p>{ page.data.wordCount } <span>words</span></p>
-									</li> */}
+										<p>{ wordCount } <span>words</span></p>
+									</li>
 								</ul>
 							</div>
 						</div>
