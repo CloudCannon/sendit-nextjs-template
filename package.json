@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@cloudcannon/filer": "^0.0.1",
-    "@cloudcannon/react-connector": "^1.0.5",
+    "@cloudcannon/react-connector": "^2.0.0",
     "@googlemaps/js-api-loader": "^1.12.2",
     "eslint-config-next": "^13.0.4",
     "gray-matter": "^4.0.3",

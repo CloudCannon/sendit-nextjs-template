@@ -6,7 +6,7 @@ const filer = new Filer({ path: 'content' });
 export default function Page({ page }) {
 	return (
 		<DefaultLayout page={page}>
-        <Blocks content_blocks={page.content_blocks || page.data.content_blocks } ></Blocks>
+        <Blocks content_blocks={page.data.content_blocks} ></Blocks>
 		</DefaultLayout>
 	);
 }
