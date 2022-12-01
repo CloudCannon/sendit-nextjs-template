@@ -69,7 +69,7 @@ export default function GlobalSignup({ block, dataBinding }) {
                                 <div className="col-md-12 mt-3">
                                     <label for="" className="d-block text-center mb-0">or</label>
                                 </div>
-                                <div className="col-md-6 mt-3">
+                                <div className="button-group">
                                     <button type="submit" className="btn btn-submit btn-social w-100">
                                         <svg
                                             width="20"
@@ -109,8 +109,6 @@ export default function GlobalSignup({ block, dataBinding }) {
                                         </svg>
                                         Sign In with Google
                                     </button>
-                                </div>
-                                <div className="col-md-6 mt-3">
                                     <button type="submit" className="btn btn-submit btn-social w-100">
                                         <svg
                                             width="20"

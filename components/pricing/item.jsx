@@ -6,9 +6,9 @@ export default function PricingTier( {tier}) {
     if (tier.has_discount){
         pricing = <>
             <div className="price">
-            <p className="pricingtable">${tier.discount_price}</p>
+            <p className="pricingtable">{tier.currency_symbol}{tier.discount_price}</p>
             <div className="discount">
-                <p>${tier.price}</p>
+                <p>{tier.currency_symbol}{tier.price}</p>
                 <div className="vector vector-one">
                 <img src="/images/pricing/Vector1.svg" alt="Vector" loading="lazy"/>
                 </div>
@@ -21,7 +21,7 @@ export default function PricingTier( {tier}) {
     } else {
         pricing = <>
             <div className="price">
-            <p><span>${tier.price}</span></p>
+            <p><span>{tier.currency_symbol}{tier.price}</span></p>
             <div className="shape">
                 <img src="/images/pricing/shape-one.png" alt="shape" loading="lazy"/>
             </div>
@@ -30,7 +30,7 @@ export default function PricingTier( {tier}) {
     }
 	return (
         <div className="col-lg-4">
-            <div className={`card pricing-item ${tier.is_active ? 'active' : ''}`}>
+            <div className={`card pricing-item ${tier.highlight_tier ? 'active' : ''}`}>
                 <h5 className="card-title">{tier.tier}</h5>
                 <p className="card-text">
                 {tier.description}
@@ -39,9 +39,9 @@ export default function PricingTier( {tier}) {
                 <div className="card-body">
                 <ul className="list-unstyled">
                     
-                    {tier.feature.map((feature, i) => (
-                        <li key={i} className={feature.is_active? '': 'deactive'}>
-                            <i className={`ph-check ${feature.is_active? '': 'deactive'}`}></i>
+                    {tier.features.map((feature, i) => (
+                        <li key={i} className={feature.active_feature? '': 'deactive'}>
+                            <i className={`ph-check ${feature.active_feature? '': 'deactive'}`}></i>
                             {feature.item}
                         </li>
                     ))}

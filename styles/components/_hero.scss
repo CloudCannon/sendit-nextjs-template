@@ -26,6 +26,7 @@
     z-index: -1;
   }
   &-content {
+    margin-top: 3rem;
     padding-left: $base-padding * 18;
     @include media-breakpoint-down-xxxl {
       padding-left: $base-padding * 9;

@@ -49,15 +49,36 @@ module.exports = {
         title_suffix: {
             comment: "Added at the end of the title and highlighted in a different color"
         },
-        // pagination.data: {
-        //   hidden: true
-        // },
-        // pagination.alias: {
-        //   hidden: true
-        // },
-        // pagination.size: {
-        //   type: "number"
-        // },
+        'pagination.data': {
+            hidden: true
+        },
+        'pagination.alias': {
+            hidden: true
+        },
+        'pagination.size': {
+            type: "number"
+        },
+        social: {
+            options: {
+                preview: {
+                    icon: 'link'
+                }
+            }
+        },
+        links: {
+            options: {
+                preview: {
+                    icon: 'link'
+                }
+            }
+        },
+        items: {
+            options: {
+                preview: {
+                    icon: 'link'
+                }
+            }
+        },
         "social[*].icon": {
             type: "select",
             options: {
