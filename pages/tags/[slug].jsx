@@ -39,7 +39,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       page: JSON.parse(JSON.stringify(page)),
-      posts: JSON.parse(JSON.stringify(filteredPosts)),
+      posts: JSON.parse(JSON.stringify({data: filteredPosts})),
       headline: capitalise(params.slug)
     }
   };

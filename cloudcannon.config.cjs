@@ -49,12 +49,6 @@ module.exports = {
         title_suffix: {
             comment: "Added at the end of the title and highlighted in a different color"
         },
-        'pagination.data': {
-            hidden: true
-        },
-        'pagination.alias': {
-            hidden: true
-        },
         'pagination.size': {
             type: "number"
         },

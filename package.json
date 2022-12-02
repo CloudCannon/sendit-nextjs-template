@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cloudcannon/filer": "^0.0.1",
+    "@cloudcannon/filer": "^0.0.2",
     "@cloudcannon/react-connector": "^2.0.0",
     "@googlemaps/js-api-loader": "^1.12.2",
     "eslint-config-next": "^13.0.4",

@@ -96,12 +96,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 	const page = await filer.getItem(`${params.slug}.md`, { folder: 'posts' });
-	const posts = await filer.getItems('posts', { excerpt: true, sortKey: 'date' });
+	const paginatedPosts = await filer.getPaginatedItems('posts', { sortKey: 'date', pagination: {size: 3, page: 1} });
 
 	return {
 		props: {
 			page: JSON.parse(JSON.stringify(page)),
-			posts: JSON.parse(JSON.stringify(posts.slice(0, 3)))
+			posts: JSON.parse(JSON.stringify(paginatedPosts.data))
 		}
 	};
 }
