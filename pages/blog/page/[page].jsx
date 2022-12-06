@@ -26,8 +26,6 @@ export async function getStaticPaths() {
 	const ignored = {
 	};
 
-  console.log(slugs)
-
 	return {
 		paths: slugs.filter(({ params }) => !ignored[params.page]),
 		fallback: false
