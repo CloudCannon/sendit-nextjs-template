@@ -13,18 +13,14 @@ export default function PricingTier( {tier}) {
                 <img src="/images/pricing/Vector1.svg" alt="Vector" loading="lazy"/>
                 </div>
             </div>
-            <div className="shape top-0">
-                <img src="/images/pricing/shape-two.png" alt="shape" loading="lazy"/>
-            </div>
+            <div className="shape-two top-0"></div>
             </div>
         </>
     } else {
         pricing = <>
             <div className="price">
             <p><span>{tier.currency_symbol}{tier.price}</span></p>
-            <div className="shape">
-                <img src="/images/pricing/shape-one.png" alt="shape" loading="lazy"/>
-            </div>
+            <div className="shape-one"></div>
             </div>
         </>
     }

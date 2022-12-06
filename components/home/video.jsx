@@ -13,20 +13,8 @@ export default function HomeVideo({ block, dataBinding }) {
                                     loading="lazy"
                                 />
                             </div>
-                            <div className="effect-one">
-                                <img
-                                    src="/images/video/effect-one.png"
-                                    alt="effect"
-                                    loading="lazy"
-                                />
-                            </div>
-                            <div className="effect-two">
-                                <img
-                                    src="/images/video/effect-two.png"
-                                    alt="effect"
-                                    loading="lazy"
-                                />
-                            </div>
+                            <div className="effect-one"></div>
+                            <div className="effect-two"></div>
                             <div className="video-iframe d-flex align-items-center justify-content-center">
                                 <div className="video-icon me-sm-9 me-8">
                                     <a className="popup-vimeo" href={block.videoUrl}>

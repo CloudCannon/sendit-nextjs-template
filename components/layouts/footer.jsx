@@ -24,7 +24,7 @@ export default function Footer({ children, page }) {
                                         {data.footer.social.map((link, i) => (
                                             <li key={i}>
                                                 <Link href={`${link.link}`}>
-                                                    <i className={link.icon} aria-hidden="true"><span class="visually-hidden">{link.icon_alt}</span></i>
+                                                    <i className={link.icon} aria-hidden="true"><span className="visually-hidden">{link.icon_alt}</span></i>
                                                 </Link>
                                             </li>
                                         ))}

@@ -14,6 +14,7 @@ Sendit is a polished, marketing website template for NextJS. Browse through a [l
 * Blog with pagination and category pages
 * Configurable navigation and footer
 * Multiple hero options 
+* Configurable theme colors
 * Optimised for editing in [CloudCannon](https://cloudcannon.com/)
 
 ## Setup
@@ -49,3 +50,9 @@ Sendit is set up for adding, updating and removing pages, components, posts, por
 
 * Reused around the site to save multiple editing locations.
 * Set in the *Data* section with respective names
+
+### Theme colors
+
+* Theme colors can be set in *Data* / *Theme*
+* The main colors are set and variants of them are computed
+* The colors will update on the next build

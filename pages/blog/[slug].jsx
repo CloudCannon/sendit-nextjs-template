@@ -40,7 +40,7 @@ export default function Post({ page, posts }) {
 										<p>{ page.data.author}</p>
 									</li>
 									<li className="list-inline-item">
-										<p>{ readingTime } <span>minutes</span></p>
+										<p>{ readingTime } <span>minutes read</span></p>
 									</li>
 									<li className="list-inline-item">
 										<p>{ wordCount } <span>words</span></p>
