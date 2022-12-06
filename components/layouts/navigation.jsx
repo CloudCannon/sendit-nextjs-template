@@ -114,7 +114,7 @@ export default function Navigation({ children, page }) {
 
                                 {data.navigation.items.map((link, i) => (
                                     <li key={i} className="nav-item">
-                                        <Link href={`${link.link}`} className={`nav-link ${page?.slug?.toLowerCase() === link.text.toLowerCase() ? 'active' : ''}`}>
+                                        <Link href={`${link.link}`} className={`nav-link ${(page?.slug === 'index' ? 'home' : page?.slug?.toLowerCase()) === link.text.toLowerCase() ? 'active' : ''}`}>
                                             {link.text}
                                         </Link>
                                     </li>
