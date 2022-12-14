@@ -17,10 +17,6 @@ export default function DefaultLayout({ children, page }) {
 
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-				<link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
-				<link href="/vendor/phosphor-icons/css/phosphor.css" rel="stylesheet" />
-				<link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
-
 			</Head>
 
 			<NextSeo noindex={page.data.seo?.no_index || false}
