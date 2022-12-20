@@ -1,26 +1,24 @@
 
 import Link from 'next/link';
-import {useEffect, useRef} from 'react';
+import {useEffect, useState} from 'react';
 import data from '../../lib/data';
 
 
 export default function Navigation({ children, page }) {
 
+    const [isSticky, setSticky] = useState(false)
+   
+    const handleScroll = () => {
+        setSticky(window.scrollY >= 70)
+    }
+
     useEffect(() => {
-        window.addEventListener("scroll", isSticky);
+        window.addEventListener("scroll", handleScroll);
         return () => {
-          window.removeEventListener("scroll", isSticky);
+          window.removeEventListener("scroll", handleScroll);
         };
       }, []);
-   
-    const isSticky = () => {
-        var windscroll = $(window).scrollTop();
-        if (windscroll >= 70) {
-            $('#mainnavigationBar').addClass('sticky-nav');
-        } else {
-            $('#mainnavigationBar').removeClass('sticky-nav');
-        }
-    }
+
     const handleClick = event => {
         var navbar = $('#mainnavigationBar');
         navbar.toggleClass('bg-nav');
@@ -29,7 +27,7 @@ export default function Navigation({ children, page }) {
     return (
         <>
             <header>
-                <nav className="navbar navbar-expand-lg position-fixed w-100 zindex-dropdown" id="mainnavigationBar">
+                <nav className={`navbar navbar-expand-lg position-fixed w-100 zindex-dropdown${isSticky ? " sticky-nav" : ""}`} id="mainnavigationBar">
                     <div className="container-fluid">
                         <Link className="navbar-brand" href="/">
                             <img src={data.navigation.logo} alt="Nav-Logo" />
@@ -58,9 +56,9 @@ export default function Navigation({ children, page }) {
                                         x2="21.5"
                                         y2="5.5"
                                         stroke="#292D32"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                     <line
                                         x1="4.5"
@@ -68,9 +66,9 @@ export default function Navigation({ children, page }) {
                                         x2="21.5"
                                         y2="12.5"
                                         stroke="#292D32"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                     <line
                                         x1="11.5"
@@ -78,9 +76,9 @@ export default function Navigation({ children, page }) {
                                         x2="21.5"
                                         y2="19.5"
                                         stroke="#292D32"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                 </svg>
                             </span>
@@ -95,16 +93,16 @@ export default function Navigation({ children, page }) {
                                     <path
                                         d="M21.5 6.5L6.5 21.5"
                                         stroke="#404152"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                     <path
                                         d="M21.5 21.5L6.5 6.5"
                                         stroke="#404152"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                 </svg>
                             </span>

@@ -25,7 +25,7 @@ export default function AboutVideo({ block, dataBinding }) {
                                 className="w-100"
                                 alt={block.video.image_alt}
                                 loading="lazy"
-                                style={{"border-radius": "20px"}}
+                                style={{"borderRadius": "20px"}}
                             />
                             <div className="effect"></div>
                             <div
