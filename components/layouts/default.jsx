@@ -69,7 +69,7 @@ export default function DefaultLayout({ children, page }) {
 			<script src="/vendor/bootstrap/bootstrap.bundle.min.js" async></script>
 			<script src="/vendor/counter-up/countup.js" async></script>
 			<script src="/vendor/magnific-popup/magnific-popup.min.js" async></script>
-			<script src="/js/script.js" async></script>
+			<script src="/js/script.js" defer></script>
 		</>
 	);
 }
