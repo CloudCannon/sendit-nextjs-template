@@ -65,10 +65,10 @@ export default function DefaultLayout({ children, page }) {
             {children}
 			<Footer page={page}/>
             
-			<script src="/vendor/jQuery/jquery.min.js"></script>
-			<script src="/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-			<script src="/vendor/counter-up/countup.js"></script>
-			<script src="/vendor/magnific-popup/magnific-popup.min.js"></script>
+			<script src="/vendor/jQuery/jquery.min.js" async></script>
+			<script src="/vendor/bootstrap/bootstrap.bundle.min.js" async></script>
+			<script src="/vendor/counter-up/countup.js" async></script>
+			<script src="/vendor/magnific-popup/magnific-popup.min.js" async></script>
 			<script src="/js/script.js" async></script>
 		</>
 	);
