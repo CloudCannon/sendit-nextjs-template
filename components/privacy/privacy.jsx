@@ -1,13 +1,13 @@
 import MarkdownIt from 'markdown-it';
 import Link from 'next/link';
 const md = new MarkdownIt({ html: true });
-import { useRef } from 'react'
+import { createRef } from 'react'
 import { Scrollspy } from "@makotot/ghostui";
 
 export default function PrivacyPrivacy({ block, dataBinding }) {
     const sectionRefs = [];
     block.terms_and_conditions.map((privacy, i) => (
-        sectionRefs.push(useRef(null))
+        sectionRefs.push(createRef())
     ))
     const handleClick = event => {
         Array.from(document.querySelectorAll('.privacy-nav .nav-link')).forEach(element => {
