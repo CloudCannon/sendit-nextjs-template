@@ -2,14 +2,14 @@
 import DefaultLayout from '../../components/layouts/default';
 import Filer from '@cloudcannon/filer';
 import BlogList from '../../components/blog/list';
-import {capitalise} from '../../lib/string-helper';
+import { capitalise } from '../../lib/string-helper';
 
 const filer = new Filer({ path: 'content' });
 
-function BlogTags({ page, posts, headline }) {
+function BlogTags({ page, posts, headline, pageSlug }) {
   return (
     <DefaultLayout page={page}>
-      <BlogList page={page} posts={posts} headline={headline}></BlogList>
+      <BlogList page={page} posts={posts} headline={headline} pageSlug={pageSlug}></BlogList>
 
     </DefaultLayout>
   )
@@ -23,24 +23,34 @@ export async function getStaticPaths() {
   posts.map((post) => {
     post.data.tags.map(tag => slugs.push({ params: { slug: tag } }))
   })
-	const ignored = {
-	};
+  const ignored = {
+  };
 
-	return {
-		paths: slugs.filter(({ params }) => !ignored[params.slug]),
-		fallback: false
-	};
+  return {
+    paths: slugs.filter(({ params }) => !ignored[params.slug]),
+    fallback: false
+  };
 }
 export async function getStaticProps({ params }) {
+  const tag = params.slug;
   const page = await filer.getItem('blog.md', { folder: 'pages' });
-  const posts = await filer.getItems('posts', { excerpt: true, sortKey: 'date' });
-  const filteredPosts = posts.filter( ({data}) => data.tags.includes(params.slug));
+  const filteredPosts = await filer.getPaginatedItems('posts', {
+    excerpt: true,
+    filter: (item) => item.data.tags.includes(tag),
+    pagination: {
+      size: page.data?.pagination?.size || 9,
+      page: 1
+    },
+    sortKey: 'date'
+  });
+  console.log(filteredPosts)
 
   return {
     props: {
       page: JSON.parse(JSON.stringify(page)),
-      posts: JSON.parse(JSON.stringify({data: filteredPosts})),
-      headline: capitalise(params.slug)
+      posts: JSON.parse(JSON.stringify(filteredPosts)),
+      pageSlug: `/tags/${tag}/page/`,
+      headline: capitalise(tag)
     }
   };
 }

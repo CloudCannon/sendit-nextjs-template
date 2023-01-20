@@ -6,10 +6,10 @@ import BlogList from '../../components/blog/list';
 
 const filer = new Filer({ path: 'content' });
 
-function BlogIndex({ page, posts, pageNo }) {
+function BlogIndex({ page, posts, pageNo, pageSlug }) {
   return (
     <DefaultLayout page={page}>
-      <BlogList page={page} posts={posts} pageNo={pageNo}></BlogList>
+      <BlogList page={page} posts={posts} pageNo={pageNo} pageSlug={pageSlug}></BlogList>
     </DefaultLayout>
   )
 }
@@ -27,6 +27,7 @@ export async function getStaticProps({ params }) {
     props: {
       page: JSON.parse(JSON.stringify(page)),
       posts: JSON.parse(JSON.stringify(paginatedPosts)),
+      pageSlug: "/blog/page/",
       pageNo: "1"
     }
   };

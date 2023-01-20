@@ -2,7 +2,7 @@ import PostSummary from '../../components/posts/summary';
 import MarkdownIt from 'markdown-it';
 const md = new MarkdownIt({ html: true });
 
-export default function BlogList({ page, posts, headline, pageNo }) {
+export default function BlogList({ page, posts, headline, pageNo, pageSlug }) {
 	return (
 		<>
         <section className="blog-hero pt-xl-22 pt-sm-20 pt-18 pb-xxl-25 pb-xl-23 pb-22 position-relative">
@@ -28,7 +28,7 @@ export default function BlogList({ page, posts, headline, pageNo }) {
                         <ul className="pagination">
                             { posts.prevPage && 
                                 <li className="page-item">
-                                    <a className="page-link btn btn-secondary" href={`/blog/page/${posts.prevPage}`}>
+                                    <a className="page-link btn btn-secondary" href={`${pageSlug}${posts.prevPage}`}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="20.657"
@@ -53,7 +53,7 @@ export default function BlogList({ page, posts, headline, pageNo }) {
                             }
                             { [...Array(posts.lastPage)].map((page, i) => (
                                 <li className="page-item" key={i}>
-                                    <a className={`page-link btn btn-secondary ${pageNo === (i+1).toString() ? 'active': ''}`} href={`/blog/page/${i+1}`}>{i+1}</a>
+                                    <a className={`page-link btn btn-secondary ${pageNo === (i+1).toString() ? 'active': ''}`} href={`${pageSlug}${i+1}`}>{i+1}</a>
                                 </li>
                             ))
                             }
@@ -61,7 +61,7 @@ export default function BlogList({ page, posts, headline, pageNo }) {
 
                             { posts.nextPage && 
                                 <li className="page-item">
-                                    <a className="page-link btn btn-secondary" href={`/blog/page/${posts.nextPage}`}>
+                                    <a className="page-link btn btn-secondary" href={`${pageSlug}${posts.nextPage}`}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="20.657"
