@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cloudcannon/filer": "^0.0.2",
+    "@cloudcannon/filer": "^0.0.3",
     "@cloudcannon/react-connector": "^2.0.0",
     "@googlemaps/js-api-loader": "^1.12.2",
     "@makotot/ghostui": "^2.0.0",
