@@ -6,10 +6,10 @@ import { capitalise } from '../../lib/string-helper';
 
 const filer = new Filer({ path: 'content' });
 
-function BlogTags({ page, posts, headline, pageSlug }) {
+function BlogTags({ page, posts, headline, pageSlug, pageNo }) {
   return (
     <DefaultLayout page={page}>
-      <BlogList page={page} posts={posts} headline={headline} pageSlug={pageSlug}></BlogList>
+      <BlogList page={page} posts={posts} headline={headline} pageSlug={pageSlug} pageNo={pageNo}></BlogList>
 
     </DefaultLayout>
   )
@@ -43,14 +43,14 @@ export async function getStaticProps({ params }) {
     },
     sortKey: 'date'
   });
-  console.log(filteredPosts)
 
   return {
     props: {
       page: JSON.parse(JSON.stringify(page)),
       posts: JSON.parse(JSON.stringify(filteredPosts)),
       pageSlug: `/tags/${tag}/page/`,
-      headline: capitalise(tag)
+      headline: capitalise(tag),
+      pageNo: "1"
     }
   };
 }
