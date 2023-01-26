@@ -160,6 +160,6 @@
   margin-top: -$base-margin * 33.5;
 
   @include media-breakpoint-down-md {
-    padding-bottom: $base-padding * 0;
+    margin-top: -$base-margin * 35.8;
   }
 }
