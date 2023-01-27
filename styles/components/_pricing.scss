@@ -1,14 +1,10 @@
-/********** 
+/**********
   13. Pricing Page and Section Styles
 **********/
 .pricing,
 .pricing-two {
   position: relative;
-  margin-top: -$base-margin * 21.5;
-
-  @include media-breakpoint-down-md {
-    margin-top: -$base-margin * 25;
-  }
+  margin-top: $base-margin;
 
   .card {
     transition: all 0.3s ease-in-out;
@@ -547,5 +543,14 @@
         border-color: $color-white;
       }
     }
+  }
+}
+
+.pricing-inner + .pricing,
+.pricing-inner + .pricing-two {
+  margin-top: -$base-margin * 21.5;
+
+  @include media-breakpoint-down-md {
+    margin-top: -$base-margin * 25;
   }
 }

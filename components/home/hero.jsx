@@ -11,9 +11,9 @@ export default function HomeHero( {block, dataBinding}) {
                 <div className="col-lg-6">
                     <div className="hero-two-content">
                     <h1 className="mb-4">{block.title}</h1>
-                    <div className="mb-7 w-xxl-80"dangerouslySetInnerHTML={{ __html: md.render(block.description) }}/>
+                    <div className="mb-7 w-xxl-80"dangerouslySetInnerHTML={{ __html: md.render(block.description) }}></div>
                     <div className="">
-                        { block.button && 
+                        { block.button &&
                             <Link href={block.button.link} className="btn btn-primary btn-lg"> {block.button.text} </Link>
                         }
                     </div>
