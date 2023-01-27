@@ -14,7 +14,7 @@ export default function HomeHero( {block, dataBinding}) {
                     <div className="mb-7 w-xxl-80"dangerouslySetInnerHTML={{ __html: md.render(block.description) }}></div>
                     <div className="">
                         { block.button &&
-                            <Link href={block.button.url} className="btn btn-primary btn-lg"> {block.button.text} </Link>
+                            <Link href={block.button.link} className="btn btn-primary btn-lg"> {block.button.text} </Link>
                         }
                     </div>
                     </div>
