@@ -20,12 +20,16 @@ content_blocks:
         number: 200
         suffix: m
         text: Venture capital raised
-      - number: 2016
+      - prefix:
+        number: 2016
+        suffix:
         text: Established in
-      - number: 40
+      - prefix:
+        number: 40
         suffix: +
         text: Amazing team members
-      - number: 4322
+      - prefix:
+        number: 4322
         suffix: +
         text: Active users and growing
 
