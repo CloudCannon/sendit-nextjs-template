@@ -22,7 +22,7 @@ export default function DefaultLayout({ children, page }) {
 			<NextSeo noindex={page.data.seo?.no_index || false}
 				title={title}
 				description={description}
-				canonical={`${data.site.baseurl}${page.seo?.canonical_url || page.slug}`}
+				canonical={`${data.site.baseurl}${page.data.seo?.canonical_url || page.slug}`}
 				openGraph={{
 					url: data.site.baseurl,
 					title: title,
@@ -45,17 +45,17 @@ export default function DefaultLayout({ children, page }) {
 					  type: "image/x-icon"
 					},
 					{
-						rel:"shortcut icon", 
-						href:`${ data.site.favicon_icon }`, 
+						rel:"shortcut icon",
+						href:`${ data.site.favicon_icon }`,
 						type: "image/x-icon"
 					},
-					{ 
-						rel:"apple-touch-icon", 
+					{
+						rel:"apple-touch-icon",
 						href:`${ data.site.favicon_image }`
 					},
-					{ 
-						rel:"icon", 
-						type: "image/png", 
+					{
+						rel:"icon",
+						type: "image/png",
 						href:`${ data.site.favicon_image }`,
 					}
 				  ]}
@@ -64,7 +64,7 @@ export default function DefaultLayout({ children, page }) {
 			<Navigation page={page}/>
             {children}
 			<Footer page={page}/>
-            
+
 			<script src="/vendor/jQuery/jquery.min.js" async></script>
 			<script src="/vendor/bootstrap/bootstrap.bundle.min.js" async></script>
 			<script src="/vendor/counter-up/countup.js" async></script>
