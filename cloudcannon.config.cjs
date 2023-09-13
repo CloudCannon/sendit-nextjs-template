@@ -20,7 +20,7 @@ module.exports = {
                 "visual"
             ],
             schemas: {
-                page:
+                default:
                 {
                     name: 'New Page',
                     path: "schemas/page.md"
