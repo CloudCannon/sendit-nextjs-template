@@ -1,5 +1,5 @@
 ---
-title: About
+title: 
 seo:
   page_description: 
   canonical_url: 
