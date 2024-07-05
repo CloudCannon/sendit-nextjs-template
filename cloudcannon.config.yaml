@@ -75,6 +75,12 @@ _inputs:
     comment: Defaults to the pages url
   featured_image:
     comment: Defaults to the image set in the Site SEO data file
+  thumb_image.image:
+    type: image
+    options:
+      width: 500
+      height: 413
+      resize_style: crop
   open_graph_type:
     comment: Defaults to the type 'website'
   author_twitter_handle:
